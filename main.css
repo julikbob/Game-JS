@@ -1,3 +1,19 @@
 .foo {
     color: red;
 }
+
+.templates {
+    display: none !important;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 10%;
+    height: 60px;
+    background-color: fuchsia;
+    margin: 10px;
+}
