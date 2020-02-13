@@ -1,7 +1,3 @@
-.foo {
-    color: red;
-}
-
 .templates {
     display: none !important;
 }
@@ -14,6 +10,41 @@
 .card {
     flex: 1 1 10%;
     height: 60px;
-    background-color: fuchsia;
     margin: 10px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    perspective: 700px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card-inner > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.card.selected-card .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front {
+    display: flex;
+    align-items: center;
+    transform: rotateY(180deg);
+    justify-content: center;
+    background-color: fuchsia;
+    border: 3px solid black;
+}
+.card-back {
+    background-color: khaki;
+    border: 1px solid black;
 }

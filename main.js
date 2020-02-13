@@ -3,10 +3,22 @@ global.templates = document.querySelector(".templates");
 global.cardsContainer = document.querySelector(".cards-container"); 
 global.hNumber = 7;
 global.vNumber = 8;
+global.selectCardClass = "selected-card";
+
+function toggleCardSelection(card, isAdd) {
+    if(isAdd) {
+        card.classList.add(global.selectCardClass);
+    } else {
+        card.classList.remove(global.selectCardClass);
+    }
+};
 
 function initCard(h, v, cardTemplate) {
-    global.cardsContainer
+    var card = global.cardsContainer
         .appendChild(cardTemplate.cloneNode(true));
+    card.addEventListener("click", function() {
+        toggleCardSelection(card, true);
+    });
 };
 
 function initCards() {
